@@ -38,7 +38,8 @@ gowtham = {
 
 <!-- ═══ ACHIEVEMENTS ═══ -->
 
-##📊Achievements
+
+## 📊Achievements
 <div align="center">
 
 <img src="./achievements.svg" alt="Key Metrics" width="820"/>
@@ -46,7 +47,7 @@ gowtham = {
 </div>
 
 ---
-##👨🏻‍💻 Tech Stack
+## 👨🏻‍💻 Tech Stack
 <!-- ═══ TECH STACK — animated staggered cards ═══ -->
 
 
