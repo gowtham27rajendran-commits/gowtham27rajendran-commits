@@ -39,7 +39,7 @@ gowtham = {
 <!-- ═══ ACHIEVEMENTS ═══ -->
 
 
-## 📊Achievements
+## 📊 Achievements
 <div align="center">
 
 <img src="./achievements.svg" alt="Key Metrics" width="820"/>
