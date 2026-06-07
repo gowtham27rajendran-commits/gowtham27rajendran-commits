@@ -1,10 +1,3 @@
-<!-- ████████████████████████████████████████████████████
-     GOWTHAM RAJENDRAN — GitHub Profile README
-     Repo name must match username exactly:
-     gowtham27rajendran-commits/gowtham27rajendran-commits
-     Upload all 4 SVGs from the /assets/ folder alongside this README.md
-     ████████████████████████████████████████████████████ -->
-
 <div align="center">
 
 <!-- ═══ NAME BANNER — clear reveal animation, no blur ═══ -->
@@ -28,12 +21,12 @@
 
 ```python
 gowtham = {
-    "role"        : "Software Development Engineer",
+    "role"        : "Software Engineer",
     "focus"       : ["Distributed Systems", "Backend Engineering", "AI / LLM Engineering"],
     "stack"       : ["Java", "Python", "Spring Boot", "Kafka", "Spark",
                      "PostgreSQL", "Redis", "Docker", "Kubernetes", "AWS"],
     "experience"  : ["Nitro Solutions (UK)", "DRG (UK)", "Modern Infotech (India)"],
-    "education"   : "MSc Advanced Computer Science · University of Strathclyde, Scotland",
+    "education"   : "MSc Advanced Computer Science · United Kingdom,
     "dsa"         : "500+ problems solved",
     "location"    : "Coimbatore, India  |  Open to relocation",
 }
