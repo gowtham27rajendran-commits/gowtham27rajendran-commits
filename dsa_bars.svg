@@ -1,0 +1,206 @@
+<svg viewBox="0 0 820 260" xmlns="http://www.w3.org/2000/svg" width="820" height="260">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&amp;family=DM+Mono:wght@400&amp;display=swap');
+
+      .bar-label {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        fill: #cdd9e5;
+      }
+      .bar-pct {
+        font-family: 'DM Mono', monospace;
+        font-size: 12px;
+        fill: #c9a84c;
+      }
+      .bar-count {
+        font-family: 'DM Mono', monospace;
+        font-size: 11px;
+        fill: #8b949e;
+      }
+      .track {
+        fill: #21262d;
+        rx: 4;
+      }
+      .section-title {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 11px;
+        font-weight: 300;
+        fill: #8b949e;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .total-label {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        fill: #8b949e;
+      }
+      .total-num {
+        font-family: 'DM Mono', monospace;
+        font-size: 28px;
+        font-weight: 400;
+        fill: #c9a84c;
+      }
+
+      /* Bar fill animations */
+      .bar-fill { animation: barGrow 1.0s cubic-bezier(0.22,1,0.36,1) forwards; transform-origin: left center; }
+      .b0 { animation-delay: 0.1s; }
+      .b1 { animation-delay: 0.25s; }
+      .b2 { animation-delay: 0.4s; }
+      .b3 { animation-delay: 0.55s; }
+      .b4 { animation-delay: 0.7s; }
+      .b5 { animation-delay: 0.85s; }
+      .b6 { animation-delay: 1.0s; }
+
+      @keyframes barGrow {
+        from { transform: scaleX(0); }
+        to   { transform: scaleX(1); }
+      }
+
+      /* Label fade */
+      .bar-row { opacity: 0; animation: rowIn 0.4s ease forwards; }
+      .r0 { animation-delay: 0.05s; }
+      .r1 { animation-delay: 0.20s; }
+      .r2 { animation-delay: 0.35s; }
+      .r3 { animation-delay: 0.50s; }
+      .r4 { animation-delay: 0.65s; }
+      .r5 { animation-delay: 0.80s; }
+      .r6 { animation-delay: 0.95s; }
+
+      @keyframes rowIn {
+        from { opacity: 0; transform: translateX(-6px); }
+        to   { opacity: 1; transform: translateX(0); }
+      }
+
+      /* Total count up — done via CSS trick (not real but we fake it statically) */
+      .total-block { opacity: 0; animation: fadeIn 0.6s ease 1.4s forwards; }
+      @keyframes fadeIn { to { opacity: 1; } }
+
+      /* Shimmer on bars */
+      .shimmer-bar {
+        fill: url(#shimmerGrad);
+        opacity: 0;
+        animation: shimmer 2.5s ease 1.4s infinite;
+      }
+      @keyframes shimmer {
+        0%  { opacity: 0; transform: translateX(-100%); }
+        20% { opacity: 0.3; }
+        80% { opacity: 0.3; }
+        100%{ opacity: 0; transform: translateX(100%); }
+      }
+    </style>
+
+    <linearGradient id="barGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#e8c96b" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="barBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#378add"/>
+      <stop offset="100%" stop-color="#6bb3f5" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="barGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#3fb950"/>
+      <stop offset="100%" stop-color="#7ee787" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="shimmerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="white" stop-opacity="0"/>
+      <stop offset="50%"  stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip-arrays">    <rect x="0" y="0" width="490" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-trees">     <rect x="0" y="0" width="441" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-graphs">    <rect x="0" y="0" width="392" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-dp">        <rect x="0" y="0" width="343" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-strings">   <rect x="0" y="0" width="416" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-backtrack"> <rect x="0" y="0" width="294" height="18" rx="4"/></clipPath>
+    <clipPath id="clip-math">      <rect x="0" y="0" width="245" height="18" rx="4"/></clipPath>
+  </defs>
+
+  <rect width="820" height="260" fill="#0d1117" rx="8"/>
+  <rect x="0" y="0" width="820" height="1" fill="#c9a84c" opacity="0.3"/>
+
+  <text class="section-title" x="20" y="28">DSA Proficiency — 500+ Problems Solved</text>
+
+  <!-- Bar track width = 490px (from x=190 to x=680) -->
+  <!-- Format: label | [====track====] pct  count -->
+
+  <!-- Arrays & Hashing · 100% · 140 solved -->
+  <g class="bar-row r0" transform="translate(20,44)">
+    <text class="bar-label" x="0" y="14">Arrays &amp; Hashing</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-arrays)" transform="translate(190,0)">
+      <rect class="bar-fill b0" x="0" y="0" width="490" height="18" rx="4" fill="url(#barGold)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">100%</text>
+    <text class="bar-count" x="740" y="14">140 solved</text>
+  </g>
+
+  <!-- Trees · 90% · 110 solved -->
+  <g class="bar-row r1" transform="translate(20,76)">
+    <text class="bar-label" x="0" y="14">Trees &amp; Graphs</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-trees)" transform="translate(190,0)">
+      <rect class="bar-fill b1" x="0" y="0" width="441" height="18" rx="4" fill="url(#barGold)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">90%</text>
+    <text class="bar-count" x="740" y="14">110 solved</text>
+  </g>
+
+  <!-- Graphs · 80% · 80 solved -->
+  <g class="bar-row r2" transform="translate(20,108)">
+    <text class="bar-label" x="0" y="14">Dynamic Programming</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-graphs)" transform="translate(190,0)">
+      <rect class="bar-fill b2" x="0" y="0" width="392" height="18" rx="4" fill="url(#barBlue)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">80%</text>
+    <text class="bar-count" x="740" y="14">80 solved</text>
+  </g>
+
+  <!-- DP · 70% · 70 solved -->
+  <g class="bar-row r3" transform="translate(20,140)">
+    <text class="bar-label" x="0" y="14">Sliding Window</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-dp)" transform="translate(190,0)">
+      <rect class="bar-fill b3" x="0" y="0" width="343" height="18" rx="4" fill="url(#barBlue)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">70%</text>
+    <text class="bar-count" x="740" y="14">70 solved</text>
+  </g>
+
+  <!-- Strings · 85% -->
+  <g class="bar-row r4" transform="translate(20,172)">
+    <text class="bar-label" x="0" y="14">Heaps &amp; Priority Q</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-strings)" transform="translate(190,0)">
+      <rect class="bar-fill b4" x="0" y="0" width="416" height="18" rx="4" fill="url(#barGreen)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">85%</text>
+    <text class="bar-count" x="740" y="14">60 solved</text>
+  </g>
+
+  <!-- Backtracking · 60% -->
+  <g class="bar-row r5" transform="translate(20,204)">
+    <text class="bar-label" x="0" y="14">Backtracking</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-backtrack)" transform="translate(190,0)">
+      <rect class="bar-fill b5" x="0" y="0" width="294" height="18" rx="4" fill="url(#barGreen)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">60%</text>
+    <text class="bar-count" x="740" y="14">25 solved</text>
+  </g>
+
+  <!-- Math · 50% -->
+  <g class="bar-row r6" transform="translate(20,236)">
+    <text class="bar-label" x="0" y="14">Bit Manipulation</text>
+    <rect x="190" y="0" width="490" height="18" rx="4" class="track"/>
+    <g clip-path="url(#clip-math)" transform="translate(190,0)">
+      <rect class="bar-fill b6" x="0" y="0" width="245" height="18" rx="4" fill="url(#barGreen)"/>
+    </g>
+    <text class="bar-pct" x="688" y="14">50%</text>
+    <text class="bar-count" x="740" y="14">15 solved</text>
+  </g>
+
+  <rect x="0" y="259" width="820" height="1" fill="#c9a84c" opacity="0.15"/>
+</svg>
