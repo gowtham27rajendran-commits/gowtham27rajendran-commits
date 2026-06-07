@@ -1,10 +1,4 @@
-[README.md](https://github.com/user-attachments/files/28685149/README.md)
-<!-- ████████████████████████████████████████████████████
-     GOWTHAM RAJENDRAN — GitHub Profile README
-     Repo name must match username exactly:
-     gowtham27rajendran-commits/gowtham27rajendran-commits
-     Upload all 4 SVGs from the /assets/ folder alongside this README.md
-     ████████████████████████████████████████████████████ -->
+
 
 <div align="center">
 
