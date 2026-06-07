@@ -1,96 +1,93 @@
-<svg viewBox="0 0 820 120" xmlns="http://www.w3.org/2000/svg" width="820" height="120">
+<svg width="922" height="290" viewBox="0 0 932 290" xmlns="http://www.w3.org/2000/svg" style="">
+  <rect width="922" height="280" fill="#06060a" rx="8" style="fill:rgb(6, 6, 10);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Scrolling ticker -->
   <defs>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&amp;family=DM+Mono:wght@400&amp;display=swap');
-      .metric-num {
-        font-family: 'DM Mono', monospace;
-        font-size: 26px;
-        font-weight: 400;
-        fill: #c9a84c;
-      }
-      .metric-label {
-        font-family: 'DM Sans', sans-serif;
-        font-size: 11px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        fill: #8b949e;
-        text-transform: uppercase;
-      }
-      .metric-card {
-        fill: #161b22;
-        stroke: #30363d;
-        stroke-width: 0.5;
-      }
-      .divider { stroke: #30363d; stroke-width: 0.5; }
-
-      /* Card entrance */
-      .mc { opacity: 0; animation: mcIn 0.6s cubic-bezier(0.22,1,0.36,1) forwards; }
-      .mc0 { animation-delay: 0.1s; }
-      .mc1 { animation-delay: 0.3s; }
-      .mc2 { animation-delay: 0.5s; }
-      .mc3 { animation-delay: 0.7s; }
-      @keyframes mcIn {
-        from { opacity: 0; transform: translateY(12px) scale(0.97); }
-        to   { opacity: 1; transform: translateY(0) scale(1); }
-      }
-
-      /* Number count-up shimmer (visual trick — static but gold flash) */
-      .num-flash { animation: numFlash 0.4s ease forwards; }
-      .nf0 { animation-delay: 0.6s; }
-      .nf1 { animation-delay: 0.8s; }
-      .nf2 { animation-delay: 1.0s; }
-      .nf3 { animation-delay: 1.2s; }
-      @keyframes numFlash {
-        0%   { fill: #e8c96b; }
-        100% { fill: #c9a84c; }
-      }
-
-      /* Gold top border animate */
-      .gold-line { stroke-dasharray: 190; stroke-dashoffset: 190; animation: lineDraw 0.5s ease forwards; }
-      .gl0 { animation-delay: 0.15s; }
-      .gl1 { animation-delay: 0.35s; }
-      .gl2 { animation-delay: 0.55s; }
-      .gl3 { animation-delay: 0.75s; }
-      @keyframes lineDraw { to { stroke-dashoffset: 0; } }
-    </style>
+    <clipPath id="ticker-clip">
+      <rect x="0" y="240" width="922" height="34"/>
+    </clipPath>
+    
   </defs>
 
-  <rect width="820" height="120" fill="#0d1117" rx="8"/>
-  <rect x="0" y="0" width="820" height="1" fill="#c9a84c" opacity="0.3"/>
+  <!-- Ticker background -->
+  <rect x="0" y="240" width="922" height="40" fill="#0d0d14" style="fill:rgb(13, 13, 20);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="0" y="240" width="922" height="1" fill="#c9a84c" opacity="0.15" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
 
-  <!-- 4 metric cards evenly spaced: 20, 215, 410, 605 | width=190 -->
+  <!-- Ticker text via foreignObject -->
+  <foreignObject x="0" y="240" width="922" height="40" clip-path="url(#ticker-clip)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="height:40px;display:flex;align-items:center;overflow:hidden;;fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+      <div style="font-family:'Courier New',monospace;font-size:10px;letter-spacing:0.15em;color:#4e4c48;;fill:rgb(0, 0, 0);stroke:none;color:rgb(78, 76, 72);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:10px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+        Apache Kafka  ·  Delta Lake  ·  Apache Spark 3.5  ·  Redis Lua  ·  XGBoost + SHAP  ·  OpenTelemetry  ·  Docker + K8s  ·  FastAPI  ·  FAISS + sentence-transformers  ·  MLflow  ·  GitHub Actions CI/CD  ·  AWS EC2 / S3 / RDS  ·  500+ DSA Problems  ·  Spring Boot  ·  PostgreSQL  ·  LangGraph  ·  pgvector  ·  Qdrant  ·  vLLM  ·  Terraform  · 
+        Apache Kafka  ·  Delta Lake  ·  Apache Spark 3.5  ·  Redis Lua  ·  XGBoost + SHAP  ·  OpenTelemetry  ·  Docker + K8s  ·  FastAPI  ·  FAISS + sentence-transformers  ·  MLflow  ·  GitHub Actions CI/CD  ·  AWS EC2 / S3 / RDS  ·  500+ DSA Problems  ·  Spring Boot  ·  PostgreSQL  ·  LangGraph  ·  pgvector  ·  Qdrant  ·  vLLM  ·  Terraform  · 
+      </div>
+    </div>
+  </foreignObject>
 
-  <!-- Card 0: 30% fewer data inconsistencies -->
-  <g class="mc mc0" transform="translate(10,10)">
-    <rect width="190" height="100" rx="6" class="metric-card"/>
-    <line class="gold-line gl0" x1="10" y1="1" x2="180" y2="1" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
-    <text class="metric-num num-flash nf0" x="95" y="55" text-anchor="middle">30%</text>
-    <text class="metric-label" x="95" y="82" text-anchor="middle">fewer inconsistencies</text>
+  <!-- Stat cards -->
+  <!-- Card 1: Years Experience -->
+  <g opacity="0" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.1s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <animateTransform attributeName="transform" type="translate" from="0,16" to="0,0" dur="0.5s" begin="0.1s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="30" y="28" width="190" height="190" fill="#111118" rx="6" style="fill:rgb(17, 17, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="30" y="28" width="190" height="3" fill="#c9a84c" rx="2" opacity="0.9" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="125" y="110" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:52px;font-weight:700;fill:#c9a84c;letter-spacing:-0.02em;fill:rgb(201, 168, 76);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:52px;font-weight:700;text-anchor:middle;dominant-baseline:auto">3+</text>
+    <text x="125" y="138" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.25em;fill:#6a6860;text-transform:uppercase;fill:rgb(106, 104, 96);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Years Exp</text>
+    <text x="125" y="162" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:8px;fill:#4e4c48;letter-spacing:0.1em;fill:rgb(78, 76, 72);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">SDE · DRG · Intern</text>
+    <rect x="56" y="175" width="138" height="26" fill="#c9a84c" rx="3" opacity="0.06" style="fill:rgb(201, 168, 76);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.06;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="125" y="192" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;fill:#8a7a50;letter-spacing:0.08em;fill:rgb(138, 122, 80);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Nitro · DRG · Modern</text>
   </g>
 
-  <!-- Card 1: ~20% latency reduction -->
-  <g class="mc mc1" transform="translate(210,10)">
-    <rect width="190" height="100" rx="6" class="metric-card"/>
-    <line class="gold-line gl1" x1="10" y1="1" x2="180" y2="1" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
-    <text class="metric-num num-flash nf1" x="95" y="55" text-anchor="middle">20%</text>
-    <text class="metric-label" x="95" y="82" text-anchor="middle">p99 latency reduction</text>
+  <!-- Card 2: Projects -->
+  <g opacity="0" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.25s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <animateTransform attributeName="transform" type="translate" from="0,16" to="0,0" dur="0.5s" begin="0.25s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="234" y="28" width="190" height="190" fill="#111118" rx="6" style="fill:rgb(17, 17, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="234" y="28" width="190" height="3" fill="#4bc8c8" rx="2" opacity="0.9" style="fill:rgb(75, 200, 200);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="329" y="110" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:52px;font-weight:700;fill:#4bc8c8;letter-spacing:-0.02em;fill:rgb(75, 200, 200);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:52px;font-weight:700;text-anchor:middle;dominant-baseline:auto">13</text>
+    <text x="329" y="138" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.25em;fill:#6a6860;text-transform:uppercase;fill:rgb(106, 104, 96);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Projects</text>
+    <text x="329" y="162" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:8px;fill:#4e4c48;letter-spacing:0.1em;fill:rgb(78, 76, 72);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Production-grade</text>
+    <rect x="258" y="175" width="142" height="26" fill="#4bc8c8" rx="3" opacity="0.06" style="fill:rgb(75, 200, 200);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.06;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="329" y="192" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;fill:#3a9898;letter-spacing:0.08em;fill:rgb(58, 152, 152);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Lakehouse · Fraud · Search</text>
   </g>
 
-  <!-- Card 2: 25% Spark runtime cut -->
-  <g class="mc mc2" transform="translate(410,10)">
-    <rect width="190" height="100" rx="6" class="metric-card"/>
-    <line class="gold-line gl2" x1="10" y1="1" x2="180" y2="1" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
-    <text class="metric-num num-flash nf2" x="95" y="55" text-anchor="middle">25%</text>
-    <text class="metric-label" x="95" y="82" text-anchor="middle">spark runtime cut</text>
+  <!-- Card 3: DSA Solved -->
+  <g opacity="0" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <animateTransform attributeName="transform" type="translate" from="0,16" to="0,0" dur="0.5s" begin="0.4s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="438" y="28" width="190" height="190" fill="#111118" rx="6" style="fill:rgb(17, 17, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="438" y="28" width="190" height="3" fill="#3ddc84" rx="2" opacity="0.9" style="fill:rgb(61, 220, 132);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="533" y="110" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:44px;font-weight:700;fill:#3ddc84;letter-spacing:-0.02em;fill:rgb(61, 220, 132);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:44px;font-weight:700;text-anchor:middle;dominant-baseline:auto">500+</text>
+    <text x="533" y="138" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;letter-spacing:0.25em;fill:#6a6860;text-transform:uppercase;fill:rgb(106, 104, 96);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">DSA Solved</text>
+    <text x="533" y="162" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:8px;fill:#4e4c48;letter-spacing:0.1em;fill:rgb(78, 76, 72);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">LeetCode · HackerRank</text>
+    <rect x="462" y="175" width="142" height="26" fill="#3ddc84" rx="3" opacity="0.06" style="fill:rgb(61, 220, 132);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.06;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="533" y="192" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;fill:#2d9f62;letter-spacing:0.08em;fill:rgb(45, 159, 98);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Arrays · Graphs · DP</text>
   </g>
 
-  <!-- Card 3: 500+ DSA -->
-  <g class="mc mc3" transform="translate(610,10)">
-    <rect width="200" height="100" rx="6" class="metric-card"/>
-    <line class="gold-line gl3" x1="10" y1="1" x2="190" y2="1" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
-    <text class="metric-num num-flash nf3" x="100" y="55" text-anchor="middle">500+</text>
-    <text class="metric-label" x="100" y="82" text-anchor="middle">DSA problems solved</text>
+  <!-- Card 4: Production Systems -->
+  <g opacity="0" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.55s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <animateTransform attributeName="transform" type="translate" from="0,16" to="0,0" dur="0.5s" begin="0.55s" fill="freeze" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="642" y="28" width="250" height="190" fill="#111118" rx="6" style="fill:rgb(17, 17, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="642" y="28" width="250" height="3" fill="#5588e0" rx="2" opacity="0.9" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.9;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="767" y="90" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.2em;fill:#5588e0;text-transform:uppercase;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Production</text>
+    <text x="767" y="112" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:11px;letter-spacing:0.2em;fill:#5588e0;text-transform:uppercase;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:11px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Systems</text>
+    <text x="767" y="138" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:8px;fill:#4e4c48;letter-spacing:0.1em;fill:rgb(78, 76, 72);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">End-to-end ML Platform</text>
+    <!-- mini pipeline diagram -->
+    <rect x="668" y="150" width="44" height="18" fill="#5588e0" rx="2" opacity="0.15" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="690" y="163" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:7px;fill:#5588e0;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:7px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Ingest</text>
+    <line x1="712" y1="159" x2="720" y2="159" stroke="#5588e0" stroke-width="0.8" opacity="0.4" style="fill:rgb(0, 0, 0);stroke:rgb(85, 136, 224);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="720" y="150" width="44" height="18" fill="#5588e0" rx="2" opacity="0.15" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="742" y="163" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:7px;fill:#5588e0;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:7px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Store</text>
+    <line x1="764" y1="159" x2="772" y2="159" stroke="#5588e0" stroke-width="0.8" opacity="0.4" style="fill:rgb(0, 0, 0);stroke:rgb(85, 136, 224);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="772" y="150" width="44" height="18" fill="#5588e0" rx="2" opacity="0.15" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="794" y="163" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:7px;fill:#5588e0;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:7px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Feature</text>
+    <line x1="816" y1="159" x2="824" y2="159" stroke="#5588e0" stroke-width="0.8" opacity="0.4" style="fill:rgb(0, 0, 0);stroke:rgb(85, 136, 224);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <rect x="824" y="150" width="44" height="18" fill="#5588e0" rx="2" opacity="0.15" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.15;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="846" y="163" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:7px;fill:#5588e0;fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:7px;font-weight:400;text-anchor:middle;dominant-baseline:auto">Decide</text>
+    <rect x="668" y="176" width="200" height="24" fill="#5588e0" rx="3" opacity="0.06" style="fill:rgb(85, 136, 224);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.06;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <text x="768" y="192" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:9px;fill:#3a5898;letter-spacing:0.06em;fill:rgb(58, 88, 152);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:9px;font-weight:400;text-anchor:middle;dominant-baseline:auto">~96% precision · &lt;100ms p99</text>
   </g>
 
-  <rect x="0" y="119" width="820" height="1" fill="#c9a84c" opacity="0.15"/>
+  <!-- Header label -->
+  <text x="461" y="16" text-anchor="middle" style="font-family:'Courier New',monospace;font-size:8px;letter-spacing:0.45em;fill:#2e2c28;fill:rgb(46, 44, 40);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Courier New&quot;, monospace;font-size:8px;font-weight:400;text-anchor:middle;dominant-baseline:auto">ENGINEERING STATS</text>
 </svg>
