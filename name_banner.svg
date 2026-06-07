@@ -125,5 +125,5 @@
   <circle class="dot" cx="486" cy="108" r="3"/>
 
   <!-- Subtitle -->
-  <text class="name-sub subtitle" x="410" y="122" text-anchor="middle">Software Development Engineer</text>
+  <text class="name-sub subtitle" x="410" y="122" text-anchor="middle">Software Engineer</text>
 </svg>
