@@ -46,10 +46,10 @@ gowtham = {
 </div>
 
 ---
-
+##👨🏻‍💻 Tech Stack
 <!-- ═══ TECH STACK — animated staggered cards ═══ -->
 
-##👨🏻‍💻 Tech Stack
+
 <div align="center">
 
 <img src="./skills_cards.svg" alt="Tech Stack" width="820"/>
@@ -60,7 +60,7 @@ gowtham = {
 
 <!-- ═══ DSA PROFICIENCY ═══ -->
 
-## 💻DS-A
+## 💻 DS-A
 <div align="center">
 
 <img src="./dsa_bars.svg" alt="DSA Proficiency" width="820"/>
